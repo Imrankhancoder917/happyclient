@@ -156,10 +156,10 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
     .family-member {
         width: 100%;
-        max-width: 350px;
+        max-width: 500px;
     }
     
     .gallery-container {
