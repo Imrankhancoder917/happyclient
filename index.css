@@ -1,0 +1,135 @@
+/* Proposal Page Styles */
+body {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.welcome-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #7b3b3b;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1.5s ease;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #7b3b3b;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease;
+}
+
+.proposal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1.5s ease;
+}
+
+.ring-animation {
+    margin: 2rem 0;
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.diamond-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, #fff 0%, #b9f2ff 10%, #66c7ff 50%, transparent 60%);
+    border-radius: 50%;
+    box-shadow: 0 0 30px #66c7ff;
+    animation: sparkle 3s infinite alternate;
+}
+
+.diamond-ring:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    border: 3px solid #66c7ff;
+    border-radius: 50%;
+}
+
+.proposal-content {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 800px;
+}
+
+.proposal-message {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.proposal-card {
+    perspective: 1000px;
+    width: 300px;
+    height: 200px;
+    margin: 2rem auto;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.proposal-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: linear-gradient(145deg, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card-back {
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    color: white;
+    transform: rotateY(180deg);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.eternal-promise {
+    font-style: italic;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #7b3b3b;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); box-shadow: 0 0 50px #66c7ff; }
+}

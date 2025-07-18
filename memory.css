@@ -1,0 +1,299 @@
+/* Memory Page Specific Styles */
+body {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #5a2c2c;
+    overflow-x: hidden;
+}
+
+.welcome-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #d81b60;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1.5s ease;
+}
+
+.page-subtitle {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ad1457;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    animation: fadeIn 2s ease;
+}
+
+.memory-intro {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width:800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    animation: fadeInUp 1.5s ease;
+    border: 1px solid rgba(216, 27, 96, 0.2);
+}
+
+.memory-timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 4rem 0;
+    position: relative;
+}
+
+.memory-timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, #f06292, #ec407a, #e91e63, #d81b60);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    z-index: 1;
+    animation: drawLine 3s ease-out;
+}
+
+.memory-card {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.memory-card:nth-child(odd) {
+    flex-direction: row;
+}
+
+.memory-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.memory-image {
+    flex: 1;
+    min-height: 600px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.memory-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(216, 27, 96, 0.1), rgba(216, 27, 96, 0.3));
+    transition: all 0.5s ease;
+}
+
+.memory-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.memory-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #d81b60;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.memory-card h3::after {
+    content: attr(data-year);
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-size: 1rem;
+    color: #f48fb1;
+    font-weight: bold;
+}
+
+.memory-card p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: #5a2c2c;
+}
+
+.memory-icons {
+    display: flex;
+    gap: 1rem;
+    color: #d81b60;
+    font-size: 1.5rem;
+}
+
+.memory-icons i {
+    transition: all 0.3s ease;
+}
+
+.memory-quote {
+    background: linear-gradient(135deg, #f8bbd0 0%, #f48fb1 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 4rem auto;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 2s ease;
+}
+
+.memory-quote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff20"><path d="M30,20 Q50,10 70,20 T90,40 Q80,60 60,70 T30,90 Q10,80 20,60 T30,20"></path></svg>');
+    background-size: 100px;
+    opacity: 0.3;
+}
+
+.quote-content {
+    position: relative;
+    z-index: 2;
+}
+
+.quote-content p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.quote-content i {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.5rem;
+    margin: 0 1rem;
+}
+
+.quote-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    color: white;
+    text-align: right;
+    margin-top: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes drawLine {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+/* Hover Effects */
+.memory-card:hover {
+    transform: scale(1.02);
+}
+
+.memory-card:hover .memory-image {
+    transform: scale(1.05);
+}
+
+.memory-card:hover .memory-overlay {
+    background: linear-gradient(to bottom, rgba(216, 27, 96, 0.2), rgba(216, 27, 96, 0.4));
+}
+
+.memory-icons i:hover {
+    transform: scale(1.3);
+    color: #ad1457;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 3rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .memory-timeline::before {
+        left: 30px;
+    }
+    
+    .memory-card {
+        flex-direction: column !important;
+        max-width: 500px;
+    }
+    
+    .memory-card h3::after {
+        top: -25px;
+        left: 0;
+    }
+    
+    .memory-content {
+        padding: 1.5rem;
+    }
+    
+    .quote-content p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 2.5rem;
+    }
+    
+    .memory-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .quote-content p {
+        font-size: 1.3rem;
+    }
+}
